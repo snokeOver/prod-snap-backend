@@ -3,6 +3,8 @@ import { createUser } from "../dbOperations/postMethods/createUser.js";
 import { test } from "../helper/test.js";
 import { createToken } from "../dbOperations/authentication/createToken.js";
 import { checkEamilExist } from "../helper/checkEmailExists.js";
+import { getFeaturedMobile } from "../dbOperations/getMethods/getFeaturedMobile.js";
+import { getSingleMobile } from "../dbOperations/getMethods/getSingleMobile.js";
 
 // Initialize Router
 const router = express.Router();
@@ -21,5 +23,11 @@ router.post("/jwt", createToken);
 // --------------------  Get operations-----------------------------//
 //API test
 router.get("/test", test);
+
+//Get the featured mobile data : 6 latest momible
+router.get("/featured-mobile", getFeaturedMobile);
+
+//Get a single mobile data
+router.get("/single-mobile/:uid", getSingleMobile);
 
 export default router;
