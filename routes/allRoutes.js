@@ -5,6 +5,7 @@ import { createToken } from "../dbOperations/authentication/createToken.js";
 import { checkEamilExist } from "../helper/checkEmailExists.js";
 import { getFeaturedMobile } from "../dbOperations/getMethods/getFeaturedMobile.js";
 import { getSingleMobile } from "../dbOperations/getMethods/getSingleMobile.js";
+import { getAllMobileData } from "../dbOperations/getMethods/getAllMobileData.js";
 
 // Initialize Router
 const router = express.Router();
@@ -29,5 +30,8 @@ router.get("/featured-mobile", getFeaturedMobile);
 
 //Get a single mobile data
 router.get("/single-mobile/:uid", getSingleMobile);
+
+//Get all mobile data with search and filter
+router.get("/all-mobiles/:uid", getAllMobileData);
 
 export default router;
