@@ -7,6 +7,7 @@ export const getAllMobileData = async (req, res, next) => {
   const search = req?.query?.search || "";
   const category = req?.query?.category || "";
   const sort = req?.query?.sort || "";
+  const priceRange = req?.query?.priceRange || "";
 
   const match = {
     name: { $regex: search, $options: "i" }, // Search by title
@@ -15,6 +16,21 @@ export const getAllMobileData = async (req, res, next) => {
   // add category filter if provided
   if (category) {
     match.brand = category;
+  }
+
+  // Add Price Range if provided
+  if (priceRange) {
+    if (priceRange === "1") {
+      match.price = { $gte: 0, $lte: 300 };
+    } else if (priceRange === "2") {
+      match.price = { $gt: 300, $lte: 500 };
+    } else if (priceRange === "3") {
+      match.price = { $gt: 500, $lte: 900 };
+    } else if (priceRange === "4") {
+      match.price = { $gt: 900, $lte: 1200 };
+    } else if (priceRange === "5") {
+      match.price = { $gt: 1200 };
+    }
   }
 
   // add soft field if provided
