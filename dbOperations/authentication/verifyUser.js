@@ -1,13 +1,12 @@
-import UserModel from "../../shcemas/userSchema.js";
-import errorHandler from "../helper/errorHandler.js";
+import errorHandler from "../../helper/errorHandler.js";
+import UserModel from "../../schemas/userSchema.js";
 
-export const verifySurveyor = async (req, res, next) => {
-  console.log("surveyor");
+export const verifyUser = async (req, res, next) => {
   try {
     const foundUser = await UserModel.findOne({
       userId: req.decoded.uid,
     });
-    if (foundUser.userRole !== "Surveyor") {
+    if (foundUser.userRole !== "User") {
       return res.status(403).send({ message: "Forbidden Access" });
     } else {
       next();

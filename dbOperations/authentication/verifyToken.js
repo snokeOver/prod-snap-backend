@@ -1,9 +1,9 @@
-import errorHandler from "../helper/errorHandler.js";
 import jwt from "jsonwebtoken";
+import errorHandler from "../../helper/errorHandler.js";
 
 export const verifyToken = async (req, res, next) => {
   const jwtSecret = process.env.JWT_SECRET;
-  //   console.log(req.headers.authorization);
+  // console.log(req.headers.authorization);
   try {
     const token = req.headers.authorization.split(" ")[1];
     // console.log("Received TOken:", token);
