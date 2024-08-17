@@ -11,7 +11,7 @@
 - **_Find The Frontend_**: Clone or download the frontend from here: https://github.com/snokeOver/prod-snap-frontend
 
 <h2>Live Site URL</h2>
-<p>Cick here to go to the live website: <a href="https://survey-sync0.web.app/">https://survey-sync0.web.app/</a></p>
+<p>Cick here to go to the live website: <a href="https://mobile-snap.web.app/">https://mobile-snap.web.app/</a></p>
 
 <h2>Features and Characteristics</h2>
 

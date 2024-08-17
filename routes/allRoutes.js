@@ -27,7 +27,7 @@ router.post("/jwt", createToken);
 //API test
 router.get("/test", test);
 
-//Get the featured mobile data : 6 latest momible
+//Get the featured mobile data : 6 latest mobile
 router.get("/featured-mobile", getFeaturedMobile);
 
 //Get a single mobile data
