@@ -15,7 +15,7 @@ export const createToken = async (req, res) => {
     // get the user details
     const userDetails = await UserModel.findOne({ userId: req.body.uid });
 
-    const token = jwt.sign(payload, jwtSecret, { expiresIn: "10h" });
+    const token = jwt.sign(payload, jwtSecret, { expiresIn: "12h" });
     res.status(200).send({ token, userDetails });
   } catch (err) {
     errorHandler(err, res);
